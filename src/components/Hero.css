@@ -1,0 +1,132 @@
+.hero {
+  min-height: calc(100vh - 84px); /* Subtracting navbar height approx */
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+/* Gradient overlay to make text pop over pattern */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, var(--color-bg) 60%, transparent);
+  z-index: 0;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+  /* Push closer to left by negating container padding locally, pushing it to the edge */
+  padding-left: 2rem !important; 
+  padding-right: 2rem !important;
+  max-width: 1400px;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-headline {
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-secondary);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.highlight-text {
+  color: var(--color-primary);
+  display: inline-block;
+}
+
+.changing-text {
+  display: inline-block;
+  animation: textChangePop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes textChangePop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-subtext {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+  font-family: var(--font-body);
+}
+
+.cta-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 4px 14px rgba(230, 92, 0, 0.4);
+}
+
+.cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 92, 0, 0.6);
+  background-color: #ff6600;
+}
+
+.hero-art {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.art-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: var(--shadow-md);
+  /* Adding a subtle border matches the Indian art aesthetic */
+  border: 4px solid var(--color-border);
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero::before {
+    width: 100%;
+    background: linear-gradient(180deg, var(--color-bg) 40%, transparent);
+  }
+  
+  .hero-content {
+    margin: 0 auto;
+  }
+  
+  .hero-headline {
+    font-size: 3rem;
+  }
+  
+  .art-img {
+    margin-top: 2rem;
+  }
+}

@@ -1,0 +1,37 @@
+.about {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.about-container {
+  position: relative;
+  z-index: 1;
+}
+
+.about-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-secondary);
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--color-white);
+  padding: 4rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.about-text:last-child {
+  margin-bottom: 0;
+}

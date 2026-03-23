@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&family=Montserrat:wght@400;600;700;800&display=swap');
+
+:root {
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Alice', serif;
+
+  --color-primary: #E65C00; /* Deep Saffron/Orange */
+  --color-secondary: #0F2D69; /* Indigo Blue */
+  --color-accent: #2A9D8F; /* Forest/Teal Green */
+  --color-text: #2D3748;
+  --color-bg: #FDFBF7; /* Soft beige/ivory */
+  --color-bg-alt: #F4EFEB; 
+  --color-white: #FFFFFF;
+  --color-border: #E2D3C1;
+  
+  --transition: all 0.3s ease;
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-bg-alt); /* Apply Page 1 background color globally */
+  background-image: url('/assets/bg-art.png'); /* Apply Page 1 background pattern globally */
+  background-repeat: repeat;
+  background-size: 400px;
+  background-blend-mode: multiply;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-secondary);
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: var(--font-heading);
+}
+
+button {
+  font-family: var(--font-heading);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: var(--transition);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--color-secondary);
+}
+
+/* Base Utility Classes */
+.text-center { text-align: center; }
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
